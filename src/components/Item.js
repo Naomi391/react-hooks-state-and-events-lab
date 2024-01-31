@@ -7,11 +7,16 @@ function Item({ name, category }) {
     setInCart((prevInCart) => !prevInCart);
   };
 
+  const cartClass = inCart ? "in-cart" : "";
   return (
-    <li className="">
+    <li className={cartClass}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add" onClick={handleCart}>
+      <button
+        className="add"
+        onClick={handleCart}
+        style={{ backgroundColor: inCart ? "purple" : "" }}
+      >
         {inCart ? "Remove from Cart" : "Add to Cart"}
       </button>
     </li>
